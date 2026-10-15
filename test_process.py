@@ -12,4 +12,16 @@ def test_statement_coverage(value, expected):
     result = process.process(value)
     assert result == expected
 
+@pytest.mark.branch
+@pytest.mark.parametrize(
+    'value,expected',
+    [
+        ([10,-3],['positivo','par']),
+        ([],[])
+    ]
+)
+def test_branch_coverage(value, expected):
+    result = process.process(value)
+    assert result == expected
+
 
